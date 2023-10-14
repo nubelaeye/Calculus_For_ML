@@ -1,0 +1,30 @@
+# Today we are going to start the supreme topic CALCULUS which will be awesome topic
+# The Calculus is the Second part of Mathematics of the Machine Learning it is based on:-
+# 1. Limits 
+# 2. Calculating Derivatives with differentiation...
+# 3. Automatic Differniationg
+
+# So let's start with basics whta is calculus:-
+
+"""
+Calculus is a branch of mathematics that deals with the * Study of continuous change *. 
+It is a powerful mathematical tool that "provides a framework for understanding how 
+quantities change in relation to one another". Calculus consists of two main branches: 
+    1. differential calculus.
+    2. integral calculus.
+
+Differential calculus primarily focuses on the concept of the derivative. 
+The derivative of a function at a certain point represents the rate of change of the function
+at that point. * It helps in understanding the instantaneous rate of change of a function, 
+as well as its slope at any given point.
+
+Integral calculus, on the other hand, focuses on the concept of the integral. 
+Integration is essentially the reverse process of differentiation, and it helps in finding
+the accumulation of quantities and the areas under curves. It is widely used in determining
+the total change or total quantity over a continuous interval.
+
+Calculus has various practical applications in diverse fields such as physics, engineering,
+economics, computer science, and many more. It plays a fundamental role in modeling and 
+analyzing real-world phenomena, making it an essential tool for solving complex problems in
+these domains.    
+"""
