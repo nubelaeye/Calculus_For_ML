@@ -1,0 +1,39 @@
+# In this lecture we will calculate "The calculus of Infintesimals".
+# To calculate it we will use the defferential calculus.
+# An integral accuracy improves as we approach an infinite-sided polygon, so too does 
+# with the differentially accuracy improves as we approach a curve...
+# Ok then let's see how does it looks like the code:-
+
+import numpy as np 
+import matplotlib.pyplot as plt
+
+x = np.linspace(-10,10, 1000) #the graph will plot from -10 to 10 with 1000 points...
+y = (x**2 + 2*x + 2)
+
+fig, ax = plt.subplots()
+_ = ax.plot(x, y)
+
+plt.show()
+
+# Before, you go deep in a curve you will find that it doesn't looks like that it would have
+# Any straight line or made up of straight lines... But, after we go deep in the curve shape
+# we will find that the shape has a straight line... -> You know that's true.
+# ok, then let's have a look..
+
+f, fx = plt.subplots()
+fx.set_xlim([-2, 0])
+fx.set_ylim([0, 2])
+_ = fx.plot(x,y)
+plt.show()
+
+fi, vx = plt.subplots()
+vx.set_xlim([-1.5,-0.5])
+vx.set_ylim([0.5, 1.5])
+_ = vx.plot(x,y)
+plt.show()
+
+fl, gx = plt.subplots()
+gx.set_xlim([-1.01,-0.99])
+gx.set_ylim([0.99, 1.01])
+_ = gx.plot(x,y)
+plt.show()
