@@ -1,0 +1,9 @@
+# In this lecture we will study about the Real world Applications of the Calculus..
+# The Differentials optimize the curves by finding it's Minima & Maxima these are plural form.
+# Used in : engineering(maximize the strength) and (minimize the cost).
+# And you know that it's widely used in machine learing and in the deep learning.
+#    Example -> Gradient descent to minimize the cost.
+#    And same as the Gradient ascent to maximize the score.
+# In reciever operating characteristics, examle -> Dog or Cat. (Binary Classification)
+# In Probability "Expectation" of random variable which is widely used in machine learning
+# and the deep learing too.
