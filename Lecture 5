@@ -1,0 +1,44 @@
+# In this lecture we study about how to calculate the limits..
+# But first of all, let's know what is limits -> we can think limit as x is 5 and then what
+# would be the y in the graph if the equation is -> x^2 + 2x + 2 -> y = x^2 + 2x + 2.
+# So, by the mathematically the answer is: 37. This is the limit
+
+# But keep in mind that, not all the function have the limits. Beceause all functions are 
+# continous:-
+#   If equation = (x^2 - 1 / x - 1)
+# Ok let's look way the way of code...
+
+import numpy as np
+
+# for the solving the equation and know that we can't solve limit for if x = 1.
+def fun(m):
+    ans = (m**2 - 1) / ( m -1)
+    return ans
+
+print(fun(2))
+print(fun(3))
+# print(fun(1)) # shows the error of dividing by zero or zero division.
+
+# Here we are getting to know has we get closure to the 1 the answer is almost 2.
+print(fun(0.9))
+print(fun(0.999))
+print(fun(1.1))
+
+# And by the way we can get the answer as 2 by the mathematically factoring it..
+# [X^2 - 1]/(x-1) -> (x-1)(x+1)/(x-1) -> x+1 and because x = 1. Then, 1+1 = 2.
+
+# In some cases we might be able to solve the equation by algebra. But not in all cases:-
+# (sin^x) / (x) -> and if x = 0, Can't be solved by algebra...
+
+# Ok then let's see how we can solve it.
+
+def si(n):
+    a = np.sin(n)/n
+    return a
+
+# print(si(0)) # Shows the same error of zero division error.
+print(si(0.1))
+print(si(0.001))
+print(si(-0.1))
+
+# It's common for limits to reach infinity..
