@@ -1,0 +1,50 @@
+# In this lecture we will study about the "The Delta Method". 
+# It allows us to determine the slope of the curve at any given point.
+# The most common differentiation method is Delta Method.
+# 'Delta' means the change from final - initial
+# Computing Derivatives with differentiation.
+import numpy as np
+import matplotlib.pyplot as plt
+
+def f(x):
+    ans = (x**2 + 2 * x + 2)
+    return ans
+
+x = np.linspace(-10,10, 1000)
+# x = -1
+y = f(x)
+# print(y)
+
+# Ok then let's calculate the slope for the points:- m(slope) = 37 - 10 of y / 5 - 2 of x
+m = (37-10)/(5-2)
+
+# now for plotting the line we can make a equation -> y = mx + b -> b = y - mx.
+b = 37 - (m * 5)
+
+line_y = m * x + b
+
+fig, ax = plt.subplots()
+plt.axvline(x=0, color='lightgray')
+plt.axhline(y=0, color='lightgray')
+plt.xlim(-11, 12)
+# plt.ylim(-10, 125)
+plt.scatter(2, 10)
+plt.scatter(5, 37, c = 'orange', zorder=3) # new
+plt.ylim(-5, 150) # new
+plt.plot(x, line_y, c='red') 
+_ = ax.plot(x,y)
+plt.show() 
+# As we get both the points closure the more accurate the tangent becomes.
+# Let's do it...
+delta_x = 0.000001
+delta_x
+
+x1 = -1
+y1 = f(x)
+
+x2 = x1 + delta_x
+y2 = f(x2)
+
+# The slope of curve of point where x = -1 is:-
+m = (y2 - y1)/(x2 - x1)
+print(m)
