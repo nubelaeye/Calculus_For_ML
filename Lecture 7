@@ -7,7 +7,7 @@
 #       D subscript(x) * function (f)
 # 2). For Second derivative:-
 #       for the equation d/dx -> we can use d^2y / dx^2. And for D subscript(x) we can use
-#       D ^ 2 subscript(x) * function(c)
+#       D ^ 2 subscript(x) * function(c) 
 
 # Rules on Derivative of Differentiation...
 # 1). If we take a constant with the funtion d/dx * x. Let's take x = 25 then the value is 0.
