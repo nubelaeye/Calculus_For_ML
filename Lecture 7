@@ -9,7 +9,7 @@
 #       for the equation d/dx -> we can use d^2y / dx^2. And for D subscript(x) we can use
 #       D ^ 2 subscript(x) * function(c) 
 
-# Rules on Derivative of Differentiation...
+# Rules on Derivative of Differentiation..
 # 1). If we take a constant with the funtion d/dx * x. Let's take x = 25 then the value is 0.
 # 2). "The Power Rule" -> d/dx * x ^ n = n * x ^ n-1 -> n=4, x ^ 4 = 4 * x ^ (4-1 = 3)
 # 3). "The Constant Multiple Rule" -> d/dx * (c y) = c * d/dx * (y) => c * dy / dx.
