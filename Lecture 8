@@ -1,0 +1,19 @@
+# While, moving further we will study about the some more prowerful *RULE of Derivative.
+# 1). The Product Rule:- Here the equation formed is -> d(wz)/dx = w dz/dx + z dw/dx.
+#       Ok, let's take an example :- fun(y) = (6x^3)(7x^4) then, -> w = 6x^3 & z = 7x^4
+#       dw/dx = 6(3*x^2) = 18x^2 & dz/dx = 7(4x^3) = 28x^3
+#       dy/dx = (6x^3)(28x^3) + (7x^4)(18x^2) -> 168x^6 + 126x^6 => 294x^6
+
+# 2). The Quotient Rule:- Here the equation formed is -> d/dx (w/z) = (z dw/dx - w dz/dx)/z^2.
+#       Let's take an example :- fun(y) = (4x^2/x^3+1) -> So, w = 4x^2 and z = x^3 + 1.
+#       dw/dx = 4(2x^1) = 8x & dz/dx = 3(1x^2) = 3x^2.
+#       So okay, Now it's easyy-pizzy -> (x^3+1)(8x) - (4x^2)(3x^2) / (x^3+1)^2  => (8x^4 + 8x - 12x^4) / (x^3+1)^2
+#       Final Result -> -4x^4 + 8x / (x^3+1)^2.
+
+# 3). *The Chain Rule:- It has many application like- Gradient Descent, Backpropogation of Neural Network.
+#       It is based on nested functions -> Let's say y = (5x+25)^3 and u = 5x + 25. The chain rule is easy way to 
+#       find the derivative of nested functions.. Now here -> y = u^3. y is function of u and u is function on x.
+#       The equation is : dy/dx = dy/du du/dx.
+#       Ok, let's take an example -> y = (2x^2+8)^2 .So, u = 2x^2 + 8 & y = u^2. -> du/dx = 2(2x) = 4x.
+#       In, the constant 8 will become zero as we seen in the constant rule. & dy/du = 2u -> 2(2x^2 + 8) = 4x^2 + 16
+#       Now the last step -> dy/du du/dx = (4x^2 + 16)(4x) = 16x^3 + 64x
