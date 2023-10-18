@@ -1,4 +1,5 @@
 # While, moving further we will study about the some more prowerful *RULE of Derivative.
+
 # 1). The Product Rule:- Here the equation formed is -> d(wz)/dx = w dz/dx + z dw/dx.
 #       Ok, let's take an example :- fun(y) = (6x^3)(7x^4) then, -> w = 6x^3 & z = 7x^4
 #       dw/dx = 6(3*x^2) = 18x^2 & dz/dx = 7(4x^3) = 28x^3
