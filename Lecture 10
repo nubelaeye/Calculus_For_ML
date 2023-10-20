@@ -1,0 +1,15 @@
+# In this lecture we will study about the automatice Differentiation. -> it's *Nice...
+# Automatic differentiation is also known as:- Autodiff, Autograd, Reverse Mode diff
+# It uses the chain Rule equation to differentiate 
+# OK, let's code it up...
+
+import torch
+x = torch.tensor(5.0)
+
+x.requires_grad_()
+
+y = x**2
+
+y.backward()
+
+print(x.grad)
