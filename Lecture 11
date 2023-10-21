@@ -1,0 +1,100 @@
+# In this lecture we will study "How to fit a line with the help of Auto differentiation"..
+# The line equation is : y = mx+b. 
+# Using this model we can fit a line within the points over billions of parameters & data.
+
+# Ok, let's code it up..
+import torch 
+import matplotlib .pyplot as plt
+
+
+x = torch.tensor([0,1,2,3,4,5,6,7])
+y = torch.tensor([1.68,1.31,.62,.33,.09, -.67, -1.23, -1.37])
+
+fig, ax = plt.subplots()
+plt.title('A Clinical Trial')
+plt.xlabel('Drug Dosage (ml)')
+plt.ylabel('Forgot the Drug')
+_ = ax.scatter(x, y)
+# plt.show()
+
+# For ploting the line we have to take a random parameter through which we can plot the line.
+# let's say m = # (Ummm..) 0.9
+m = torch.tensor([0.9]).requires_grad_()
+
+# And as same with the y-intercept named as (b).
+b = torch.tensor([0.1]).requires_grad_()
+
+# This function is just for the line_slope intercept..
+def regression(my_x, my_m, my_b):
+    return my_m*my_x + my_b
+
+# Now moving on further let's taste a bit of real machine learning practice..
+# To fit the line is divided into 4 steps -> 
+# 1. Forward Pass -> from this we will get y hat.
+# 2. Compare y hat with the real y to calculate the cost C.
+# 3. use the chain rule to calculate the gradient of the C(cost) with respect to parameters.
+# 4. To adjust and reduce the C (cost).
+
+# Ok, then let's start the code .
+
+# 1. Forward Pass
+y_hat = regression(x,m,b) # It only gives the value of intercept of line_y(See would know it)
+
+# 2. Compare y_hat with real y to calculate the cost..
+# Here we are using the Mean Squared Error (Loss Function) for calculating the cost.
+# For calculating it we have a equation ->C = 1/n ∑(subscript i=1, in power n)(y_hat − y)^2.
+# Code for it..
+def MSE(y_hat, y):
+    sigma = torch.sum((y_hat-y) ** 2)
+    return sigma/len(y)
+
+# This function is just for ploting the graph of the slope/Regression model.
+def regression_plot(my_x, my_y, my_m, my_b):
+    
+    fig, ax = plt.subplots()
+
+    ax.scatter(my_x, my_y)
+    
+    x_min, x_max = ax.get_xlim()
+    y_min = regression(x_min, my_m, my_b).detach().item()
+    y_max = regression(x_max, my_m, my_b).detach().item()
+    
+    ax.set_xlim([x_min, x_max])
+    _ = ax.plot([x_min, x_max], [y_min, y_max])
+    # fig.show()
+
+# So cost is:-
+C = MSE(y_hat, y)
+print(C) # Here C is 19.6003
+
+# 3. Now we will use Autodiff to calculate the Gradient of C.
+C.backward()
+m.grad
+b.grad
+
+# 4. Gradient Descent..
+# We are using here stocastic Gradient Descent to reduce and adjust the slope.
+optimizer = torch.optim.SGD([m,b], lr=0.01)
+optimizer.step()
+
+regression_plot(x,y,m,b)
+# fig.show()
+
+# If now we check out the cost.. after running the training for once 
+C = MSE(regression(x,m,b),y)
+print(C) # Here C is 8.4926
+
+# Now let's train our model for 1000 times to minize the cost to lowest with the best line.
+epochs = 1000 # For learning the model we use the epochs name as a variable..
+# For learning we will use the for loop for training the model over 1000 times...
+for epoch in range(epochs):
+    # And now performing all the steps again..
+    optimizer.zero_grad() #would be better at the place of accumulating unneccesary space.
+    yhat = regression(x,m,b) #step 1.
+    C = MSE(yhat, y) # Step 2
+    
+    C.backward() #step 3
+    optimizer.step() # step 4
+    
+    # The Final Stage
+    print('Epoch {}, cost {}, m grad {}, b grad {}'.format(epoch, '%.3g' % C.item(), '%.3g' % m.grad.item(), '%.3g' % b.grad.item())) # This is really Awesome here you will know how the models learn.
