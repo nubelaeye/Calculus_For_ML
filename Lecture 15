@@ -33,3 +33,18 @@ print(m.grad)
 
 # The partial derivative of C with respect to b(del C/del b) is:
 print(b.grad)
+
+# The Gradient of Cost, ∇C
+# The gradient of cost, which is symbolized ∇C (pronounced "nabla C"), is a vector of all 
+# the partial derivatives of C with respect to each of the individual model parameters:
+# ∇C = ∇pC (can be also denoted as) = [∂C/∂p1 , ∂C / ∂p2, ⋯ ,∂C/∂pn]T
+
+# In this case, there are only two parameters, b and m:
+# ∇C=[∂C / ∂b, ∂C / ∂m]^T(transpose)
+
+# Ok let's see..
+import torch
+
+
+gradient = torch.tensor([[b.grad.item(), m.grad.item()]]).T
+print(gradient)
