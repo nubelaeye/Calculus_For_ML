@@ -1,0 +1,35 @@
+# In this lecture we will study about fitting the point on linear Regression..
+# As the most used example the Moore-penrose-pseudoinverse example of Dosage of Drugs.
+# Ok let's see....
+import torch
+
+xs = torch.tensor([0, 1, 2, 3, 4, 5, 6, 7.])
+ys = torch.tensor([1.86, 1.31, .62, .33, .09, -.67, -1.23, -1.37])
+
+def regression(my_x, my_m, my_b):
+    return my_m*my_x + my_b
+
+m = torch.tensor([0.9]).requires_grad_()
+b = torch.tensor([0.1]).requires_grad_()
+
+
+# To keep the partial derivatives as simple as possible, let's move forward with a single instance 
+# from the eight possible data points:
+i = 7
+x = xs[i]
+y = ys[i]
+
+yhat = regression(x, m, b)
+
+def squared_error(my_yhat, my_y):
+    return (my_yhat - my_y)**2
+
+C = squared_error(yhat, y)
+# Use autodiff to calculate gradient of w.r.t. parameters
+C.backward()
+
+# The partial derivative of C with respect to m(del C/del m) is:
+print(m.grad)
+
+# The partial derivative of C with respect to b(del C/del b) is:
+print(b.grad)
