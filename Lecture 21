@@ -1,0 +1,15 @@
+# In this lecture we will study about the Numeric Integration with python..
+
+from scipy.integrate import quad # the term quad means the quadrature = numerical integration
+
+def g(x):
+    return 2*x
+
+print(quad(g,3,4)) # 1st ouput is for the answer and the 2nd is for the error detection.
+# And now moving on let's calculate the real Area under the ROC(Receiver Operating Characteristic) curve..
+from sklearn.metrics import auc
+
+xs = [0,0,0.5,0.5,1]
+ys = [0,0.5,0.5,1,1]
+
+print(auc(xs,ys))
