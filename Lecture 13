@@ -1,0 +1,37 @@
+# In this lecture we will study about the Advanced Partial Derivatives..
+# We will determine the volume of the cylinder...
+# The volume formula to solve is: v = pie * radius ^ 2 * length.
+# a change in length l corresponds to the change in volume by pie r^2.
+# Ok let's code it up!
+import numpy as np
+import matplotlib.pyplot as plt
+import torch
+import math # for constant pi
+
+# This is function for calulating the cylinder's volume.
+def CylinderVol(r, l):
+    return math.pi * r**2 * l
+
+# Let's say the radius is 3 meters...
+r = torch.tensor(3.).requires_grad_()
+
+# ...and length is 5 meters:
+l = torch.tensor(5.).requires_grad_()
+
+# Then the volume of the cylinder is 141.4 cubic meters: 
+v = CylinderVol(r, l)
+v.backward()
+
+print(l.grad == (math.pi * (3 ** 2))) # As you can see now the both are same and ouput -> ture.
+
+#             This is when we derive del volume/del length = (pie)(radius^2).  
+# This means that with r = 3, a change in length by one unit corresponds to a change in volume of 28.27. We can prove this to ourselves:
+# Or you can say that if the radius or the length is same and one of them is changed by one unite then the output will be increased as same as other one unite.
+print(CylinderVol(3, 6) - CylinderVol(3, 5))
+print(CylinderVol(3, 7) - CylinderVol(3, 6))
+# The ouput is 28.274..
+
+#             Let's see with deriving of del volume/del radius = 2(pie)(radius)(length).  
+
+print(r.grad)
+print(2 * math.pi * 3 * 5)
