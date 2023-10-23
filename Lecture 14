@@ -1,0 +1,14 @@
+# In this lecture we will study about the Chain Rule on Partial Derivative Notation...
+
+# y = f(u), u = g(x) -> dy/du x du/dx.
+# But it's kinda simple we will work on multivariate functions..
+# y = f(u) & u = g(x, z). We can observe it by diagram more better. y -> u --> -> x, -> z.
+# bit bigger here -> y = f(u,v) , u = g(x,y) & v = h(x,y).
+
+# Let's say we have to find the derivation of y in respect of x.
+# then, the equation formed is :- dy/dx = dy/du x du/dx + dy/dv x dv/dx.
+# And the final partial derivative of the large functions..
+# y = f(u1,u2,....uM) & uj = g(x1,x2,...xM)
+
+# for i = 1,2,...n: 
+#   dy/dxi = dy/du1 x du1/dxi + dy/du2 x du2/dxi + dy/du3 x du3/dxi + ....dy/duM x duM/dxi 
