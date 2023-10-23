@@ -1,0 +1,20 @@
+# In this lecture we will study about the confusion matrix...
+# The confusion matrix are those condition in which the machine model is unable to 
+# distinguish or differentiate the example so it's named as the confusion matrix.
+
+"""
+" A confusion matrix is a table that is often used to describe the performance of a 
+classification model on a set of test data for which the true values are known. "
+It allows visualization of the performance of an algorithm. It is a useful tool for 
+evaluating the performance of a machine learning model, especially in the case of 
+binary classification, where the output can be either positive or negative.
+
+In a binary classification task, the confusion matrix has four important terms:
+
+1.True Positives (TP): The cases in which the model predicted the positive class correctly.
+2.True Negatives (TN): The cases in which the model predicted the negative class correctly.
+* 3.False Positives (FP): The cases in which the model predicted the positive class, 
+but the actual class was negative. Also known as Type I error.
+* 4.False Negatives (FN): The cases in which the model predicted the negative class, 
+but the actual class was positive. Also known as Type II error.
+"""
