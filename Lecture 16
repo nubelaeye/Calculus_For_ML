@@ -1,0 +1,29 @@
+# In this lectuer we will study about the Descending the Gradient Cost.
+# Ok let's see now..
+import torch
+import matplotlib.pyplot as plt
+
+xs = torch.tensor([0, 1, 2, 3, 4, 5, 6, 7.])
+ys = torch.tensor([1.86, 1.31, .62, .33, .09, -.67, -1.23, -1.37])
+
+def regression(my_x, my_m, my_b):
+    return my_m*my_x + my_b
+
+m = torch.tensor([0.9]).requires_grad_()
+b = torch.tensor([0.1]).requires_grad_()
+
+# Step 1: Forward pass
+yhat = regression(xs, m, b)
+
+# Step 2: Compare y^hat with true y to calculate cost C.
+def mse(my_yhat, my_y): 
+    sigma = torch.sum((my_yhat - my_y)**2)
+    return sigma/len(my_y)
+
+
+C = mse(yhat, ys)
+
+C.backward()
+
+print(m.grad)
+print(b.grad)
