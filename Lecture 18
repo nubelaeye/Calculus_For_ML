@@ -1,0 +1,25 @@
+# In this lecture we will study about the Binary Classification for this I'm Super exicited..
+"""
+Binary classification is a fundamental concept in machine learning and statistics used to
+categorize data into two distinct groups or classes. The term "binary" refers to the fact 
+that there are only two possible outcomes or classes. The main objective of binary 
+classification is to develop a model that can predict to which of the two classes a new piece
+of data belongs based on the features or attributes associated with it.
+
+In binary classification, the two classes are typically represented as positive (+) and
+negative (-) classes, or as class 1 and class 0. The process involves training a model using
+a labeled dataset, where each data point is associated with a class label. The model then 
+learns patterns and relationships in the data to make predictions on new, unseen data.
+
+Commonly used algorithms for binary classification include logistic regression, decision trees,
+support vector machines (SVM), naive Bayes classifiers, and various types of neural networks.
+Evaluation metrics such as accuracy, precision, recall, F1-score, and the area under the 
+receiver operating characteristic curve (AUC-ROC) are often used to assess the performance 
+of a binary classification model.
+
+Binary classification is widely applied in various real-world applications, including spam
+detection in emails, medical diagnosis, fraud detection in financial transactions, 
+sentiment analysis, and many other areas where data can be categorized into two distinct groups.
+"""
+# If y = 1, and the prediction is 0.49 is 100% Wrong and if the prediction is 0.51% is 100%
+# Correct it's correct as much as the prediction of 0.99 
