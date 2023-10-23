@@ -1,0 +1,20 @@
+# In this lecture we will study about Backpropagation..
+# It is kind of chain rule of partial derivative of cost with respect to model parameters extends 
+# to deep neural networks, which may have 1000s of layers
+# It's just same as those 4 steps just renamed it further in deep and neural networks.
+# Fordward Pass -> Forward propagation.
+# Compare y hat and y -> y^hat - y (same)
+# Auto differentiation(Cost.backward()) -> back propagation.
+# Upadte and Adjust -> w and b parameter update (same).
+
+# If you want to go more deep in Back propagation then...
+# Backpropagation, short for "backward propagation of errors," is a fundamental technique used in the training of artificial neural networks. It is a supervised learning algorithm that trains the weights of
+# a neural network through a gradient descent method. The purpose of backpropagation is to minimize the error between the actual output of the network and the desired output by adjusting the network's weights
+# accordingly.
+
+# The backpropagation algorithm works by first making a forward pass through the network, where the input data is propagated forward layer by layer, ultimately producing an output.
+#The algorithm then calculates the error or loss between the actual output and the desired output using a predefined loss function, such as mean squared error or cross-entropy.
+
+# After the forward pass, backpropagation computes the gradient of the loss function with respect to the weights of the network, using the chain rule from calculus. This gradient is then used to update
+#the weights of the network in the opposite direction of the gradient, aiming to minimize the loss. By iteratively repeating this process for multiple iterations or epochs, the network's weights 
+#are gradually adjusted, leading to improved performance and better convergence towards the desired output.
